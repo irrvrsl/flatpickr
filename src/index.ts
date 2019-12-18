@@ -1282,7 +1282,7 @@ function FlatpickrInstance(
     self.currentMonth += delta;
 
     if (self.currentMonth < 0 || self.currentMonth > 11) {
-      self.currentMonth = self.currentMonth === 12 ? 1 : 12;
+      self.currentMonth = (self.currentMonth + 12) % 12;
 
       triggerEvent("onYearChange");
       buildMonthSwitch();
